@@ -11,7 +11,7 @@ Este projeto é uma versão web do desafio de Mobile, desenvolvido individualmen
 - Integração com a API do The Movie Database (TMDB)
 
 ## Link do site hospedado
-
+https://brayanalexsander.github.io/Site-de-Filmes/
 
 ---
 
