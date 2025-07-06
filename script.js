@@ -1,8 +1,5 @@
-// API do The Movie Database (TMDB) - Usando a API especificada pelo usuário
 const API_KEY = 'd29e79bb675e164fc1f28decd659e21c';
 const API_BASE = 'https://api.themoviedb.org/3';
-
-// API PRINCIPAL UTILIZADA (conforme especificado pelo usuário):
 // https://api.themoviedb.org/3/movie/${id}?api_key=${API_KEY}&language=pt-BR
 
 const catalogo = document.getElementById('catalogo');
