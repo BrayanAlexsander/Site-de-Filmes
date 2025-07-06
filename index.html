@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MoovieApp - Catálogo de Filmes</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body class="bg-gradient">
+    <!-- Header fixo -->
+    <header class="header-dark header-fixed">
+        <div class="header-container">
+            <h1 class="logo-title"><i class="fas fa-clapperboard"></i> MoovieApp</h1>
+        </div>
+        <div class="header-search">
+            <input type="text" id="searchInput" placeholder="Buscar filmes..." class="header-search-input" />
+        </div>
+    </header>
+
+    <!-- Barra horizontal de filtros e categorias -->
+    <nav class="filters-bar">
+        <div class="categories-nav">
+            <button class="nav-btn active" data-category="now_playing">Em Cartaz</button>
+            <button class="nav-btn" data-category="popular">Populares</button>
+            <button class="nav-btn" data-category="top_rated">Melhores Avaliados</button>
+            <button class="nav-btn" data-category="upcoming">Em Breve</button>
+        </div>
+        <div class="filters-horizontal">
+            <select id="ratingFilter" class="filter-chip">
+                <option value="">⭐ Avaliação</option>
+                <option value="high">Altas</option>
+                <option value="medium">Médias</option>
+                <option value="low">Baixas</option>
+            </select>
+            <select id="yearFilter" class="filter-chip">
+                <option value="">📅 Ano</option>
+                <option value="2025">2025</option>
+                <option value="2024">2024</option>
+                <option value="2023">2023</option>
+                <option value="2022">2022</option>
+            </select>
+            <select id="popularityFilter" class="filter-chip">
+                <option value="">🔥 Popularidade</option>
+                <option value="high">Mais populares</option>
+                <option value="low">Menos populares</option>
+            </select>
+        </div>
+    </nav>
+
+    <!-- Conteúdo Principal -->
+    <main class="main-content main-content-full">
+        <div class="loading" id="loading">
+            <div class="spinner"></div>
+            <p>Carregando filmes...</p>
+        </div>
+        <div class="movies-grid" id="moviesGrid">
+            <!-- Os filmes serão carregados aqui -->
+        </div>
+        <!-- Paginação -->
+        <div id="pagination" style="display: none;">
+            <button id="prevPage">Anterior</button>
+            <span id="pageInfo">Página 1 de 1</span>
+            <button id="nextPage">Próxima</button>
+        </div>
+        <div class="no-results" id="noResults" style="display: none;">
+            <i class="fas fa-search"></i>
+            <h3>Nenhum filme encontrado</h3>
+            <p>Tente ajustar os filtros ou a busca</p>
+        </div>
+        <div class="movie-details-page" id="movieDetails" style="display:none;"></div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer-dark">
+        <div class="footer-container">
+            <p>&copy; 2025 MoovieApp - Desenvolvido por Brayan Alexsander</p>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html> 
