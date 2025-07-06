@@ -1,3 +1,4 @@
+/* Reset e configurações básicas */
 * {
   margin: 0;
   padding: 0;
@@ -12,6 +13,7 @@ body {
   line-height: 1.6;
 }
 
+/* Header */
 header {
   background: rgba(15, 23, 42, 0.95);
   backdrop-filter: blur(10px);
@@ -81,6 +83,7 @@ h1 {
   background: #0ea5e9;
 }
 
+/* Navegação de categorias */
 .categories-nav {
   background: rgba(30, 41, 59, 0.8);
   padding: 1rem 0;
@@ -122,6 +125,7 @@ h1 {
   border-color: #38bdf8;
 }
 
+/* Loading */
 .loading {
   display: flex;
   flex-direction: column;
@@ -137,6 +141,7 @@ h1 {
   margin-bottom: 1rem;
 }
 
+/* Main content */
 main {
   max-width: 1200px;
   margin: 0 auto;
@@ -144,6 +149,7 @@ main {
   min-height: calc(100vh - 200px);
 }
 
+/* Catálogo */
 #catalogo {
   display: flex;
   flex-wrap: wrap;
@@ -207,6 +213,7 @@ main {
   color: #fbbf24;
 }
 
+/* Detalhes do filme */
 #detalhes {
   max-width: 900px;
   margin: 2rem auto;
@@ -381,6 +388,7 @@ main {
   box-shadow: 0 4px 12px rgba(56, 189, 248, 0.3);
 }
 
+/* Paginação */
 .pagination {
   display: flex;
   justify-content: center;
@@ -420,6 +428,7 @@ main {
   text-align: center;
 }
 
+/* Footer */
 footer {
   background: rgba(15, 23, 42, 0.95);
   border-top: 1px solid rgba(56, 189, 248, 0.2);
@@ -429,6 +438,7 @@ footer {
   margin-top: 2rem;
 }
 
+/* Responsividade */
 @media (max-width: 768px) {
   .header-content {
     flex-direction: column;
@@ -530,6 +540,7 @@ footer {
   }
 }
 
+/* Animações */
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -545,6 +556,7 @@ footer {
   animation: fadeIn 0.5s ease-out;
 }
 
+/* Estados de erro */
 .error-message {
   text-align: center;
   color: #ef4444;
