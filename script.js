@@ -1,10 +1,5 @@
-// API do The Movie Database (TMDB) - Usando a API especificada pelo usuário
 const API_KEY = 'd29e79bb675e164fc1f28decd659e21c';
 const API_BASE = 'https://api.themoviedb.org/3';
-
-// API PRINCIPAL UTILIZADA (conforme especificado pelo usuário):
-// https://api.themoviedb.org/3/movie/${id}?api_key=${API_KEY}&language=pt-BR
-
 const catalogo = document.getElementById('catalogo');
 const detalhes = document.getElementById('detalhes');
 const loading = document.getElementById('loading');
@@ -16,27 +11,22 @@ const prevPageBtn = document.getElementById('prevPage');
 const nextPageBtn = document.getElementById('nextPage');
 const pageInfo = document.getElementById('pageInfo');
 
-// Estado da aplicação
 let currentPage = 1;
 let currentCategory = 'popular';
 let totalPages = 1;
 let searchQuery = '';
 
-// Inicialização
 window.onload = () => {
   loadMovies();
   setupEventListeners();
 };
 
-// Configuração dos event listeners
 function setupEventListeners() {
-  // Busca
   searchBtn.addEventListener('click', handleSearch);
   searchInput.addEventListener('keypress', (e) => {
     if (e.key === 'Enter') handleSearch();
   });
 
-  // Categorias
   categoryBtns.forEach(btn => {
     btn.addEventListener('click', () => {
       const category = btn.dataset.category;
@@ -51,7 +41,6 @@ function setupEventListeners() {
     });
   });
 
-  // Paginação
   prevPageBtn.addEventListener('click', () => {
     if (currentPage > 1) {
       currentPage--;
@@ -67,7 +56,6 @@ function setupEventListeners() {
   });
 }
 
-// Atualizar categoria ativa
 function updateActiveCategory() {
   categoryBtns.forEach(btn => {
     btn.classList.remove('active');
@@ -77,7 +65,6 @@ function updateActiveCategory() {
   });
 }
 
-// Função de busca
 function handleSearch() {
   const query = searchInput.value.trim();
   if (query) {
@@ -89,7 +76,6 @@ function handleSearch() {
   }
 }
 
-// Atualizar categoria ativa
 function updateActiveCategory() {
   categoryBtns.forEach(btn => {
     btn.classList.remove('active');
@@ -99,7 +85,6 @@ function updateActiveCategory() {
   });
 }
 
-// Função de busca
 function handleSearch() {
   const query = searchInput.value.trim();
   if (query) {
@@ -111,7 +96,6 @@ function handleSearch() {
   }
 }
 
-// Carregar filmes
 async function loadMovies() {
   showLoading();
   hideDetails();
@@ -130,7 +114,7 @@ async function loadMovies() {
 
     if (data.results && data.results.length > 0) {
       displayMovies(data.results);
-      totalPages = Math.min(data.total_pages, 500); // TMDB limita a 500 páginas
+      totalPages = Math.min(data.total_pages, 500);
       updatePagination();
     } else {
       showNoResults();
@@ -143,7 +127,6 @@ async function loadMovies() {
   }
 }
 
-// Exibir filmes
 function displayMovies(movies) {
   catalogo.innerHTML = '';
   
@@ -153,7 +136,6 @@ function displayMovies(movies) {
   });
 }
 
-// Criar card do filme
 function createMovieCard(filme) {
   const card = document.createElement('div');
   card.className = 'filme-card';
@@ -179,7 +161,6 @@ function createMovieCard(filme) {
   return card;
 }
 
-// Mostrar detalhes do filme
 async function mostrarDetalhes(id) {
   showLoading();
   hideCatalog();
@@ -281,14 +262,12 @@ async function mostrarDetalhes(id) {
   }
 }
 
-// Voltar ao catálogo
 function voltarCatalogo() {
   detalhes.classList.remove('visible');
   showCatalog();
   updatePagination();
 }
 
-// Funções de controle de visibilidade
 function showLoading() {
   loading.style.display = 'flex';
 }
